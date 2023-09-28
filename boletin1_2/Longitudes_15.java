@@ -30,11 +30,11 @@ public class Longitudes_15 {
 
     public static int determinarTipoTriangulo(double lado1, double lado2, double lado3) {
         if (lado1 == lado2 && lado1 == lado3) {
-            return 1;
+            return 1; // Triangulo Equilátero
         } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
-            return 2;
+            return 2; // Triangulo Isósceles
         } else {
-            return 3;
+            return 3; // Triangulo Escaleno
         }
     }
 }
