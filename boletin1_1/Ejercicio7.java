@@ -1,3 +1,5 @@
+package boletin1_1;
+
 import java.util.Scanner;
 
 public class Ejercicio7 {
@@ -22,10 +24,6 @@ public class Ejercicio7 {
 		}while (numA >= 0);
 		System.out.println("Has introducido " + (contador - 1) + " numero positivos");
 		
-	}
-
-}
-
 	}
 
 }
