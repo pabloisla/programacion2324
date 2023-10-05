@@ -1,44 +1,21 @@
 package boletin1_1;
 
-import java.util.Scanner;
-
 public class Ejercicio9 {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        int numero;
-
-        do {
-            System.out.print("Ingrese un número entero positivo: ");
-            numero = scanner.nextInt();
-        } while (numero <= 0);
-
-        boolean esPerfecto = esNumeroPerfecto(numero);
-
-        if (esPerfecto) {
-            System.out.println("El número " + numero + " es perfecto.");
-        } else {
-            System.out.println("El número " + numero + " no es perfecto.");
-        }
-
-        // Cerrar el escáner
-        scanner.close();
-    }
-
-    public static boolean esNumeroPerfecto(int numero) {
-        int sumaDivisores = 1; // Inicializamos en 1 porque todos los números son divisibles por 1.
-
-        for (int i = 2; i * i <= numero; i++) {
-            if (numero % i == 0) {
-                sumaDivisores += i;
-                int otroDivisor = numero / i;
-                if (otroDivisor != i) {
-                    sumaDivisores += otroDivisor;
-                }
+        for (int i = 1; i <= 100; i++) {
+            if (esNumeroPerfecto(i)) {
+                System.out.println("El número es perfecto: " + i);
             }
         }
+    }
 
-        return sumaDivisores == numero;
+    public static boolean esNumeroPerfecto(int a) {
+        int sumaDivisores = 0;
+        for (int i = 1; i <= a / 2; i++) {
+            if (a % i == 0) {
+                sumaDivisores += i;
+            }
+        }
+        return sumaDivisores == a;
     }
 }

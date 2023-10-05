@@ -3,27 +3,30 @@ package boletin1_1;
 import java.util.Scanner;
 
 public class Ejercicio7 {
-	
-	private static Scanner teclado = new Scanner(System.in);
 
-	public static void main(String[] args) {
-	
-		int numA, numB = 0;
-		int contador = 0;
-		
-		
-		do {
-			System.out.println("Introduce dos numeros");
-			numA = Integer.parseInt(teclado.nextLine());
-			numB = Integer.parseInt(teclado.nextLine());
-			contador++;
-			if (numA < 0)
-				numA = -numA;
-		
-		
-		}while (numA >= 0);
-		System.out.println("Has introducido " + (contador - 1) + " numero positivos");
-		
-	}
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
+        int cantidadNumeros;
+
+        do {
+            System.out.print("Ingrese la cantidad de números: ");
+            cantidadNumeros = scanner.nextInt();
+        } while (cantidadNumeros <= 0);
+
+        double suma = 0;
+
+        for (int i = 1; i <= cantidadNumeros; i++) {
+            System.out.print("Ingrese el número #" + i + ": ");
+            double numero = scanner.nextDouble();
+            suma += numero;
+        }
+
+        double media = suma / cantidadNumeros;
+
+        System.out.println("La media de los números ingresados es: " + media);
+
+        // Cerrar el escáner
+        scanner.close();
+    }
 }
