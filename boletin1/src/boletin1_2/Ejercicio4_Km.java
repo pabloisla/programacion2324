@@ -19,9 +19,10 @@ public class Ejercicio4_Km {
         // Convertir el tiempo en horas a horas y minutos
         int horas = (int) tiempoEnHoras;
         int minutos = (int) ((tiempoEnHoras - horas) * 60);
+        int segundos = (int) ((tiempoEnHoras - horas - (minutos / 60)) * 3600);
 
         // Imprimir el tiempo en horas y minutos
-        System.out.println("El tiempo de viaje es de " + horas + " horas y " + minutos + " minutos.");
+        System.out.println("El tiempo de viaje es de " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos");
 
         // Cerrar el escáner
         sc.close();

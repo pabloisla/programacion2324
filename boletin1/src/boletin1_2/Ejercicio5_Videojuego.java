@@ -34,4 +34,15 @@ public class Ejercicio5_Videojuego {
         // Cerrar el escáner
         sc.close();
     }
+
+    // Método para actualizar la salud del personaje
+    public static double actualizarVida(double saludActual, double danoRecibido) {
+        // Restar el daño recibido de la salud actual
+        saludActual -= danoRecibido;
+        // Asegurarse de que la salud no sea negativa
+        if (saludActual < 0) {
+            saludActual = 0;
+        }
+        return saludActual;
+    }
 }
