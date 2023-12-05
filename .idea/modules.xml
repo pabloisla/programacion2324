@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ejercicios_Repaso_Youtube/Ejercicios_Repaso_Youtube.iml" filepath="$PROJECT_DIR$/Ejercicios_Repaso_Youtube/Ejercicios_Repaso_Youtube.iml" />
       <module fileurl="file://$PROJECT_DIR$/POO/POO.iml" filepath="$PROJECT_DIR$/POO/POO.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/WorkSpace.iml" filepath="$PROJECT_DIR$/.idea/WorkSpace.iml" />
       <module fileurl="file://$PROJECT_DIR$/boletin1/boletin1.iml" filepath="$PROJECT_DIR$/boletin1/boletin1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boletin2/boletin2.iml" filepath="$PROJECT_DIR$/boletin2/boletin2.iml" />
     </modules>
   </component>
 </project>

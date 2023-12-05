@@ -2,7 +2,7 @@ package MiEntradaSalida;
 
 import java.util.Scanner;
 
-public class MiEntradaSalida {
+public class MiEntradaSalida1 {
 
 	public static Scanner sc = new Scanner(System.in);
 
@@ -16,15 +16,15 @@ public class MiEntradaSalida {
 		while (flag) {
 			// Pedimos el entero por pantalla.
 			System.out.println(mensaje);
-			// Comprobamos si el usuario esta introduciendo algo correcto usando la
-			// excepcion del metodo parseInt.
+			// Comprobamos si el usuario está introduciendo algo correcto usando la
+			// exception del método parseInt.
 			try {
 				integer = Integer.parseInt(sc.nextLine());
-				// Si llegamos hasta aqui, es porque el usuario ha introducido un dato correcto
-				// y no se ha lanzado ninguna excepcion.
+				// Si llegamos hasta aquí, es porque el usuario ha introducido un dato correcto
+				// y no se ha lanzado ninguna exception.
 				flag = false;
 			}
-			// Si se lanza la excepcion, informamos al usuario de su error.
+			// Si se lanza la exception, informamos al usuario de su error.
 			catch (NumberFormatException e) {
 				System.out.println("Tienes que introducir un número entero");
 			}
@@ -45,16 +45,16 @@ public class MiEntradaSalida {
 			// Pedimos el entero por pantalla.
 			System.out.println(mensaje);
 			// Comprobamos si el usuario esta introduciendo algo correcto usando la
-			// excepcion del metodo parseInt.
+			// exception del método parseInt.
 			try {
 				integer = Integer.parseInt(sc.nextLine());
 				// Si llegamos hasta aqui, es porque el usuario ha introducido un dato correcto
-				// y no se ha lanzado ninguna excepcion.
+				// y no se ha lanzado ninguna exception.
 				if (integer >= 0) {
 					flag = false;
 				}
 			}
-			// Si se lanza la excepcion, informamos al usuario de su error.
+			// Si se lanza la exception, informamos al usuario de su error.
 			catch (NumberFormatException e) {
 				System.out.println("Introduzca un número entero positivo.");
 			}
@@ -75,7 +75,7 @@ public class MiEntradaSalida {
 			// Pedimos el entero por pantalla.
 			System.out.println(mensaje);
 			// Comprobamos si el usuario esta introduciendo algo correcto usando la
-			// excepcion del metodo parseInt.
+			// excepcion del método parseInt.
 			try {
 				integer = Integer.parseInt(sc.nextLine());
 				// Si llegamos hasta aqui, es porque el usuario ha introducido un dato correcto
@@ -105,11 +105,11 @@ public class MiEntradaSalida {
 			// Pedimos el entero por pantalla.
 			System.out.println(mensaje);
 			// Comprobamos si el usuario esta introduciendo algo correcto usando la
-			// excepcion del metodo parseInt.
+			// excepcion del método parseInt.
 			try {
 				c = sc.nextLine().charAt(0);
 				// Si llegamos hasta aqu�, es porque el usuario ha introducido un dato correcto
-				// y no se ha lanzado ninguna excepci�n.
+				// y no se ha lanzado ninguna excepcion.
 				flag = false;
 			}
 			// Si se lanza la excepcion, informamos al usuario de su error.
@@ -132,8 +132,8 @@ public class MiEntradaSalida {
 		while (flag) {
 			// Pedimos el entero por pantalla.
 			System.out.println(mensaje);
-			// Comprobamos si el usuario esta introduciendo algo correcto usando la
-			// excepcion del metodo parseInt.
+			// Comprobamos si el usuario está introduciendo algo correcto usando la
+			// excepcion del método parseInt.
 
 			String cadena = sc.nextLine();
 
