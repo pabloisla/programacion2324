@@ -1,4 +1,6 @@
-package Boletin4_1;
+package Boletin4_1.Maquina;
+
+import Boletin4_1.ParametroNoValidoException;
 
 public class Maquina {
 	public static final int MAX_CAFE = 50;

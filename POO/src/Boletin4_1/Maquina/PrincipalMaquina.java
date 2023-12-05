@@ -1,4 +1,7 @@
-package Boletin4_1;
+package Boletin4_1.Maquina;
+
+import Boletin4_1.Maquina.Maquina;
+import Boletin4_1.ParametroNoValidoException;
 
 import java.util.Scanner;
 
@@ -9,18 +12,18 @@ public class PrincipalMaquina {
 	public static void main(String[] args) {
 		try {
 			Maquina m1 = new Maquina(-1, 2, 1);
-		
-			
+
+
 			int opcion;
-			
+
 			do {
 				System.out.println(m1.mostrarMenu());
 				System.out.print("Seleccione una opci�n: ");
 				opcion = Integer.parseInt(sc.nextLine());
-				
+
 				// Guardamos el dinero introducido por el cliente
 				double dineroIntroducido = 0;
-				
+
 				switch (opcion) {
 				case Maquina.OPCION_CAFE:
 				case Maquina.OPCION_LECHE:
@@ -37,14 +40,14 @@ public class PrincipalMaquina {
 				default:
 					System.out.println("Opci�n no v�lida");
 				}
-			
+
 			} while (opcion != Maquina.OPCION_APAGAR);
 		}
 		catch (ParametroNoValidoException ex) {
 			System.out.println(ex.getMessage());
 		}
-		
-		
+
+
 	}
 	
 	public static double controlarDinero(int opcion) {
@@ -96,7 +99,7 @@ public class PrincipalMaquina {
 	}
 	
 	/**
-	 * 
+	 *
 	 * @param m el objeto que representa la m�quina
 	 * @param opcion la opci�n seleccionada
 	 * @return el cambio a devolver
@@ -111,7 +114,7 @@ public class PrincipalMaquina {
 		else {
 			m.servirProducto(opcion);
 		}
-		
+
 		return cambioADevolver;
 	}
 	

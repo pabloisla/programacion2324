@@ -65,7 +65,7 @@ public class Persona1 {
     }
 
     public static char getLetraDni(int dni){
-        char caracteres[] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
+        char[] caracteres = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
         return caracteres[dni % 23];
     }
 
