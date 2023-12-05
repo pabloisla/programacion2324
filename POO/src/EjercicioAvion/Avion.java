@@ -16,7 +16,7 @@ public class Avion {
 
     private Revision[] revisiones;
 
-    public Avion(String marca, String modelo, double consumo, Deposito deposito, Revision revision, Revision[] revisiones, Revision[] revisiones1) {
+    public Avion(String marca, String modelo, double consumo, Deposito deposito) {
 
         this.marca = marca;
         this.modelo = modelo;
@@ -43,6 +43,16 @@ public class Avion {
         return null;
     }
 
+    // medida en km
+    public boolean puedeVolar(double distancia) {
+        Revision ultimaRevision = getUltimaRevision();
+        double distanciaAlcanzable = deposito.getCantidadActual() / consumo;
+        if (distanciaAlcanzable >= distancia && ultimaRevision.isEstado() && ultimaRevision.getFecha().plusMonths(ultimaRevision.getPeriodoValidez()).isAfter(LocalDateTime.now())) {
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Avion{" +
@@ -50,6 +60,9 @@ public class Avion {
                 ", modelo='" + modelo + '\'' +
                 ", consumo=" + consumo +
                 ", deposito=" + deposito +
-                ", revisiones=" + Arrays.toString(revisiones) + getUltimaRevision();
+                ", revisiones=" + Arrays.toString(revisiones) +
+                ", ultimaRevision=" + getUltimaRevision() +
+                '}';
+
     }
 }

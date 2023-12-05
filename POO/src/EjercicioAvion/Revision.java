@@ -1,7 +1,5 @@
 package EjercicioAvion;
 
-import java.time.DateTimeException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -14,10 +12,10 @@ public class Revision {
     // Periodo de validez en meses
     private int periodoValidez;
 
-    public Revision (LocalDateTime fecha, boolean estado, int periodoValidez) {
+    public Revision(LocalDateTime fecha, boolean estado, int periodoValidez) {
 
         // Este if hace que se puede ver si la fecha es más
-        if (LocalDateTime.now().isBefore(LocalDateTime.now())) {
+        if (LocalDateTime.now().isBefore(fecha)) {
             this.fecha = fecha;
         }
         this.estado = estado;
@@ -38,10 +36,10 @@ public class Revision {
     public int getPeriodoValidez() {
         return periodoValidez;
     }
-    
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        return fecha.format(formatter) + " con resultado " + (estado ? "satisfactorio con una validez de " + periodoValidez + " meses" : " no se ha echo revision ");
+        return fecha.format(formatter) + " con resultado " + (estado ? "satisfactorio con una validez de " + periodoValidez + " meses" : " No ha sido apto ");
     }
 }
