@@ -2,21 +2,22 @@ import java.util.Objects;
 
 public class Usuario {
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String dni;
-    private String numeroSocio;
+    private String numSocio;
 
-
-    public Usuario(String nombre, String apellidos, String dni) {
+    public Usuario(String nombre, String apellido, String dni) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.dni = dni;
     }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Usuario usuario)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
+        Usuario usuario = (Usuario) o;
         return Objects.equals(dni, usuario.dni);
     }
 
@@ -25,11 +26,17 @@ public class Usuario {
         return Objects.hash(dni);
     }
 
-    public void setNumeroSocio(String numeroSocio) {
-        this.numeroSocio = numeroSocio;
+    public void setNumSocio(String numSocio) {
+        this.numSocio = numSocio;
     }
 
-    public String getDni() {
-        return dni;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Usuario{");
+        sb.append("nombre='").append(nombre).append('\'');
+        sb.append(", apellido='").append(apellido).append('\'');
+        sb.append(", numSocio='").append(numSocio).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }

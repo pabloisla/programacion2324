@@ -1,67 +1,59 @@
 import java.util.Objects;
 
 public class Libro {
-    private String nombre;
+    private String titulo;
     private String autor;
     private String sinopsis;
-    public int ejemplaresTotales;
-    public int ejemplaresDisponibles;
+    private int numeroEjemplares;
+    private int ejemplaresDisponibles;
 
-    public Libro(String nombre, String autor, String sinopsis, int ejemplaresTotales) {
-        this.nombre = nombre;
+    public Libro(String titulo, String autor, String sinopsis, int numeroEjemplares) {
+        this.titulo = titulo;
         this.autor = autor;
         this.sinopsis = sinopsis;
-        this.ejemplaresTotales = ejemplaresTotales;
-        this.ejemplaresDisponibles = ejemplaresTotales;
+        this.numeroEjemplares = numeroEjemplares;
+        this.ejemplaresDisponibles = numeroEjemplares;
+    }
+
+    public void prestamo() throws BibliotecaException {
+        if (ejemplaresDisponibles == 0){
+            throw new BibliotecaException("No quedan ejemplares disponibles");
+        }
+        ejemplaresDisponibles--;
+    }
+
+    public void devolverPrestamo() throws BibliotecaException {
+        if (ejemplaresDisponibles == numeroEjemplares){
+            throw new BibliotecaException("El libro no dispone de más ejemplares");
+        }
+        ejemplaresDisponibles++;
+    }
+
+    public int getEjmplaresDisponibles() {
+        return ejemplaresDisponibles;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Libro libro)) return false;
-        return Objects.equals(nombre, libro.nombre) && Objects.equals(autor, libro.autor);
+        if (o == null || getClass() != o.getClass()) return false;
+        Libro libro = (Libro) o;
+        return Objects.equals(titulo, libro.titulo) && Objects.equals(autor, libro.autor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, autor);
+        return Objects.hash(titulo, autor);
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getAutor() {
-        return autor;
-    }
-
-    public int getEjemplaresDisponibles() {
-        return ejemplaresDisponibles;
-    }
-
-    public void prestar() {
-        if (ejemplaresDisponibles > 0) {
-            ejemplaresDisponibles--;
-            System.out.println("Libro prestado con éxito.");
-        } else {
-            System.out.println("No hay ejemplares disponibles para préstamo.");
-        }
-    }
-
-    public void devolver() {
-        if (ejemplaresDisponibles < ejemplaresTotales) {
-            ejemplaresDisponibles++;
-            System.out.println("Libro devuelto con éxito.");
-        } else {
-            System.out.println("Todos los ejemplares están disponibles. No se puede devolver más.");
-        }
-    }
-
-    public int getEjemplaresTotales() {
-        return ejemplaresTotales;
-    }
-
-    public void setEjemplaresTotales(int ejemplaresTotales) {
-        this.ejemplaresTotales = ejemplaresTotales;
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Libro{");
+        sb.append(titulo).append(" - ");
+        sb.append(autor).append(' ');
+        sb.append(", ejemplares ").append(ejemplaresDisponibles);
+        sb.append(" / ").append(numeroEjemplares);
+        sb.append('}');
+        return sb.toString();
     }
 }
