@@ -1,4 +1,4 @@
-package Boletin_H_5_1;
+package Boletin_H_5_1.Ej2;
 
 public class Vehiculo {
 
@@ -82,7 +82,7 @@ public class Vehiculo {
 
     public double getPrecio(int dias) throws InvalidValueException {
         if (dias <= 0) {
-            throw new InvalidValueException("Se debe alquilar por al menos un d�a.");
+            throw new InvalidValueException("Se debe alquilar por al menos un día.");
         }
 
         return this.getPrecioBase() * dias;

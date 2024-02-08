@@ -1,4 +1,4 @@
-package Boletin_H_5_1;
+package Boletin_H_5_1.Ej2;
 @SuppressWarnings("serial")
 
 public class InvalidValueException extends Exception {
